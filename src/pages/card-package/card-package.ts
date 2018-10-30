@@ -15,8 +15,36 @@ import { IonicPage, NavController, NavParams, AlertController, Events } from 'io
 })
 export class CardPackagePage {
 
+
+  cardInfos = [
+
+  {
+    "name": "Alin",
+    "type": "Debit Card",
+    "imgSource": "http://img0.imgtn.bdimg.com/it/u=3079759769,323137711&fm=200&gp=0.jpg",
+  },
+  {
+    "name": "AXiang",
+    "type": "Debit Card",
+    "imgSource": "http://img0.imgtn.bdimg.com/it/u=3079759769,323137711&fm=200&gp=0.jpg",
+  },
+  // {
+  //   "name": "AWen",
+  //   "type": "Credit Card",
+  //   "imgSource": "https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1540905946&di=3c26e7ad6148a920c90576c13033dfc5&src=http://www.shang360.com/upload/article/20161105/88606261631478321103.jpg",
+  // },
+
+
+  ]
+
+    
+    
   constructor(public events: Events, public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController) {
+  
   }
+
+
+  
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad CardPackagePage');
@@ -45,7 +73,7 @@ export class CardPackagePage {
   showAddAlert() {
       const prompt = this.alertCtrl.create({
         title: 'Add',
-        message: "Input the number of the card you're keen on deleting",
+        message: "Input the card number to be added:",
         inputs: [
           {
             name: 'cardNumber',
@@ -85,7 +113,7 @@ export class CardPackagePage {
   showDeleteAlert() {
     const prompt = this.alertCtrl.create({
       title: 'Delete',
-      message: "Select the number of the card you're so keen on deleting",
+      message: "Input the card number to delete",
       inputs: [
         {
           name: 'cardNumber',
@@ -132,7 +160,7 @@ export class CardPackagePage {
   showFailedAlert() {
       const alert = this.alertCtrl.create({
         title: 'Card Number Invalid...',
-        subTitle: 'Please try again!',
+        subTitle: 'Length of the number should be 16 - 19.',
         buttons: ['OK']
       })
       alert.present();

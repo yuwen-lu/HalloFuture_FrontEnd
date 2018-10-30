@@ -14,63 +14,26 @@
 
 
 
-	<ion-content class="card-background-page">
+<ion-content class="card-background-page">
 
-		
-			<ion-fab bottom right>
-			    <button id="add" ion-fab mini color="dark" (click)=addCard()><ion-icon name="add"></ion-icon></button>
+	
+	<ion-fab bottom right id="AddCard">
+	    <button id="add" ion-fab mini color="secondary" (click)=addCard()><ion-icon name="add"></ion-icon></button>
 
-			    <button id="remove" ion-fab mini color="dark" (click)=deleteCard()><ion-icon name="remove"></ion-icon></button>
-		  	</ion-fab>
-		
-				
-	  <ion-list no-lines>
+	    <!-- <button id="remove" ion-fab mini color="dark" (click)=deleteCard()><ion-icon name="remove"></ion-icon></button> -->
+  	</ion-fab>
+			
+  <ion-list no-lines>
 
-	  	<ion-list-header>
-			<h1>Debit Cards</h1>
-	  	</ion-list-header>
-		
-		  <ion-card>
-		    
+	  <ion-card *ngFor="let cardInfo of cardInfos">
 
 		    <button ion-button clear (click)=gotoCard()>
-			
-			<img src="../../assets/imgs/debit-card.jpg"/>
-						
+				<img src={{cardInfo.imgSource}}/>
 		    </button>
-		    
-		    <div class="card-title">ALin</div>
-		    <div class="card-subtitle">Debit Card</div>
-		  </ion-card>
+	    <div class="card-title">{{cardInfo.name}}</div>
+	    <div class="card-subtitle">{{cardInfo.type}}</div>
+	  </ion-card>
 
-		  <ion-card>
-		    <button ion-button clear (click)=gotoCard()>
-			
-			<img src="../../assets/imgs/debit-card.jpg"/>
-						
-		    </button>
-		    <div class="card-title">AXiang</div>
-		    <div class="card-subtitle">Debit Card</div>
-		  </ion-card>
-		
-	  
-	  
+  </ion-list>
 
-
-		  <ion-list-header>
-				<h1>Credit Cards</h1>
-		  </ion-list-header>
-
-		  <ion-card>
-		    <button ion-button clear (click)=gotoCard()>
-			
-			<img src="../../assets/imgs/credit-card.jpg"/>
-						
-		    </button>
-		    <div class="card-title">Awen</div>
-		    <div class="card-subtitle">Credit Card</div>
-		  </ion-card>
-	  
-	  </ion-list>
-
-	</ion-content>
+</ion-content>
