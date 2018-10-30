@@ -19,8 +19,10 @@ import { CardPackagePage } from '../card-package/card-package'
 })
 export class SignUpPage {
 
+
   constructor(public navCtrl: NavController, public navParams: NavParams, 
   				public alertCtrl: AlertController, public events: Events) {
+
   }
 
   ionViewDidLoad() {

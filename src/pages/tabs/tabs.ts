@@ -17,11 +17,14 @@ import { PromotionPage } from '../promotion/promotion';
 })
 export class TabsPage {
 
-
+	uname: string;
 	tab1Root = CardPackagePage;
  	tab2Root = PaymentPage;
  	tab3Root = PromotionPage;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+
+  	this.uname = navParams.get('username');
+    console.log(this.uname);
   }
 
   ionViewDidLoad() {

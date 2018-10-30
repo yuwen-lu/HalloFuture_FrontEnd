@@ -10,7 +10,7 @@ import { TabsPage } from '../pages/tabs/tabs';
   
 })
 export class MyApp {
-  rootPage:any = HomePage;
+  rootPage:any = TabsPage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, 
               public events: Events) {

@@ -59,9 +59,11 @@ export class LoginPage {
   	
   	console.log(this.uname.value, this.password.value);
 
-  	if(this.uname.value == 'hallo' && this.password.value == 'future'){
+  	if(this.uname.value == '123' && this.password.value == '123'){
   		this.showSuccessAlert();
-      this.navCtrl.push(TabsPage);
+      this.navCtrl.push(TabsPage, {
+        username: this.uname.value,
+      });
   	}
   	else{
   		this.showFalseAlert();
