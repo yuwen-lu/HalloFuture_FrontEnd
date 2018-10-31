@@ -16,12 +16,18 @@
 <ion-content padding>
 
 
-		<ion-fab center middle>
-			<button ion-fab color="dark">
-				<div id="pay">
-					PAY
-				</div>
-			</button>
-		</ion-fab>
+			<div *ngIf="!hideButton">
+				<ion-fab center middle>
+					<button ion-fab color="dark" id="pay-button" (click)=getStringCode()>
+						<div id="pay">
+							PAY
+						</div>
+					</button>
+				</ion-fab>
+			</div>
+		
+			<div id="qrcode">
+				<img src={{avatarUrl}}>
+			</div>
 
 </ion-content>
