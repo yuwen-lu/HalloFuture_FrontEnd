@@ -30,7 +30,7 @@ export class HomePage {
 	  toSignUp(){
 
 
-		  this.navCtrl.push(SignUpPage,);
+		  this.navCtrl.push(SignUpPage);
 
 	  }
 

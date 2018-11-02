@@ -15,7 +15,11 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class CardInfoPage {
 
+	cardNum: string;
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+  	this.cardNum = navParams.get('data');
+  	console.log("title: " + this.cardNum);
   }
 
   ionViewDidLoad() {

@@ -27,10 +27,10 @@
 
 	  <ion-card *ngFor="let cardInfo of cardInfos">
 
-		    <button ion-button clear (click)=gotoCard()>
+		    <button ion-button clear (click)=gotoCard(cardInfo.number)>
 				<img src={{cardInfo.imgSource}}/>
 		    </button>
-	    <div class="card-title">{{cardInfo.name}}</div>
+	    <div class="card-title" #title>{{cardInfo.name}}</div>
 	    <div class="card-subtitle">{{cardInfo.type}}</div>
 	  </ion-card>
 

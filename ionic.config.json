@@ -1,5 +1,7 @@
 {
   "name": "myBlankApp",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "ionic-angular"
 }

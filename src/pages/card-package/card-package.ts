@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController, Events } from 'ionic-angular';
-
+import { CardInfoPage } from '../card-info/card-info';
 /**
  * Generated class for the CardPackagePage page.
  *
@@ -20,11 +20,13 @@ export class CardPackagePage {
 
   {
     "name": "Alin",
+    "number": "123456789012345",
     "type": "Debit Card",
     "imgSource": "http://img0.imgtn.bdimg.com/it/u=3079759769,323137711&fm=200&gp=0.jpg",
   },
   {
     "name": "AXiang",
+    "number": "098765432109876",
     "type": "Debit Card",
     "imgSource": "http://img0.imgtn.bdimg.com/it/u=3079759769,323137711&fm=200&gp=0.jpg",
   },
@@ -37,8 +39,8 @@ export class CardPackagePage {
 
   ]
 
-    
-    
+  
+  
   constructor(public events: Events, public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController) {
   
   }
@@ -51,15 +53,22 @@ export class CardPackagePage {
   }
 
 
-  gotoCard(){
-  	//used to goto card, should have a parameter CardId
+  gotoCard(number){
+
+    //used to goto card, should have a parameter CardId
+    // this.title = JSON.stringify(this.title);
+    // console.log("before push: " + this.title);
+    this.navCtrl.push(CardInfoPage, {
+      "data": number,
+    });
+
   }
 
 
   addCard(){
     //add card info
     this.showAddAlert();
-    this.gotoCard();
+    //this.gotoCard();
   }
 
   deleteCard(){
