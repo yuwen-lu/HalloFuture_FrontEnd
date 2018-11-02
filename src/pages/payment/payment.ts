@@ -35,7 +35,7 @@ export class PaymentPage {
   	let url="https://api.github.com/users/yuwen-lu";
   	this.http.get(url).subscribe((data) => {
   		console.log(data);
-  		this.avatarUrl = data.avatar_url;
+  		//this.avatarUrl = data.avatar_url;
   		console.log(this.avatarUrl);
   		this.hideButton = true;
 

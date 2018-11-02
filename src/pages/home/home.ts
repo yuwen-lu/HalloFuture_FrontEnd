@@ -7,6 +7,8 @@ import { CardPackagePage } from '../card-package/card-package';
 import { LoginPage } from '../login/login';
 import { SignUpPage } from '../sign-up/sign-up';
 
+import { TouchID } from '@ionic-native/touch-id';
+
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
@@ -16,7 +18,7 @@ export class HomePage {
 
 
 
-  constructor(public navCtrl: NavController, public alertCtrl: AlertController) {
+  constructor(private touchId: TouchID, public navCtrl: NavController, public alertCtrl: AlertController) {
 
   }
 
@@ -35,6 +37,21 @@ export class HomePage {
 	  }
 
 
+    fingerPrintAuth(){
+
+      this.touchId.isAvailable()
+        .then(
+          res => console.log('TouchID is available!'),
+          err => console.error('TouchID is not available', err)
+        );
+
+      this.touchId.verifyFingerprint('Scan your fingerprint please')
+        .then(
+          res => console.log('Ok', res),
+          err => console.error('Error', err)
+        );
+
+    }
 	
 
   
