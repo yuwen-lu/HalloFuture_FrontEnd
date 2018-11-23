@@ -17,7 +17,8 @@ import { HttpClient } from "@angular/common/http";
 export class CardInfoPage {
   cardNum: string;
   cardImg: string;
-  remainMoney;
+  accountBalance;
+  unbalance; //unusable balance
 
   constructor(
     private http: HttpClient,
@@ -29,12 +30,13 @@ export class CardInfoPage {
     console.log("title: " + this.cardNum);
     console.log("ImgPath: " + this.cardImg);
 
-    let url = "http://localhost:8080/mycards?card=" + this.cardNum;
+    let url = "http://localhost:8080/balance?card=" + this.cardNum;
     console.log("url: " + url);
     this.http.get(url).subscribe(data => {
-      this.remainMoney = data.toString();
-      console.log("remain money: " + this.remainMoney);
-      console.log("remain money type: " + typeof this.remainMoney);
+      console.log(data);
+      this.accountBalance = data.balance;
+      this.unbalance = data.unusableBalance;
+      console.log("accountBalance: " + this.accountBalance);
     });
   }
 

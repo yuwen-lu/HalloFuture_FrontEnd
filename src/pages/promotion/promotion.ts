@@ -15,8 +15,8 @@ import { HttpClient } from "@angular/common/http";
   templateUrl: "promotion.html"
 })
 export class PromotionPage {
-  cardInfos;
-  uname;
+  uname: string; //username
+  shopInfos; //store the received JSON information
 
   constructor(
     public http: HttpClient,
@@ -31,7 +31,7 @@ export class PromotionPage {
     console.log("url: " + url);
     this.http.get(url).subscribe(data => {
       console.log(data);
-      this.cardInfos = data;
+      this.shopInfos = data;
     });
   }
 

@@ -69,7 +69,12 @@ export class LoginPage {
       if (result == 0) {
         const alert = this.alertCtrl.create({
           title: "Welcome Back",
-          subTitle: "Mr. " + this.uname.value + ", may you have a good day.",
+          subTitle:
+            "User No. " +
+            this.uname.value +
+            "." +
+            "<br/><br/>" +
+            "Let's go rock the world.",
           buttons: ["OK"]
         });
         alert.present();

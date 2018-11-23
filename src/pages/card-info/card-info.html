@@ -15,7 +15,10 @@
     <img src="{{ cardImg }}" />
     <ion-card-content>
       <ion-card-title> {{ cardNum }} </ion-card-title>
-      <p>Money remaining in your account: {{ remainMoney }}</p>
+      <p>Balance:</p>
+      <strong>{{ accountBalance }}</strong>
+      <p>Unusable Balance:</p>
+      <strong>{{ unbalance }}</strong>
     </ion-card-content>
   </ion-card>
 </ion-content>

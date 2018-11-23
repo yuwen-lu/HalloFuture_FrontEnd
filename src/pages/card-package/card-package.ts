@@ -76,7 +76,11 @@ export class CardPackagePage {
       inputs: [
         {
           name: "cardNumber",
-          placeholder: "Add Card"
+          placeholder: "Add Card Number"
+        },
+        {
+          name: "cardType",
+          placeholder: "Enter card type: Debit, Credit or Peony"
         }
       ],
       buttons: [
@@ -91,7 +95,8 @@ export class CardPackagePage {
           handler: data => {
             JSON.stringify(data);
             let card = data.cardNumber; //use this to temporarily store
-            if (this.isValid(card)) {
+            let type = data.cardType;
+            if (this.isValid(card, type)) {
               console.log("Card Added..." + card);
               this.showSuccessAlert();
             } else {
@@ -125,9 +130,9 @@ export class CardPackagePage {
           text: "Delete",
           handler: data => {
             JSON.stringify(data);
-            let card = data.cardNumber; //use this to temporarily store
-            if (this.isValid(card)) {
-              console.log("Card Deleted..." + card);
+            let number = data.cardNumber; //use this to temporarily store
+            if (this.isValid(number, "credit")) {
+              console.log("Card Deleted..." + number);
               this.showSuccessAlert();
             } else {
               this.showFailedAlert();
@@ -157,9 +162,18 @@ export class CardPackagePage {
     alert.present();
   }
 
-  isValid(cardNumber) {
+  isValid(cardNumber, cardType) {
     console.log("cardNumber length: " + cardNumber.length);
-    if (cardNumber.length >= 16 && cardNumber.length <= 19) return true;
-    else return false;
+    if (cardNumber.length >= 16 && cardNumber.length <= 19) {
+      if (
+        cardType == "debit" ||
+        cardType == "Debit" ||
+        cardType == "credit" ||
+        cardType == "Credit" ||
+        cardType == "peony" ||
+        cardType == "Peony"
+      )
+        return true;
+    } else return false;
   }
 }
