@@ -1,7 +1,8 @@
 import { Component } from "@angular/core";
-import { IonicPage, NavController, NavParams } from "ionic-angular";
+import { IonicPage, NavController, NavParams, Events } from "ionic-angular";
 import { HttpClient } from "@angular/common/http";
 import { Geolocation } from "@ionic-native/geolocation";
+
 // import { Observable } from 'rxjs/Observable';
 
 /**
@@ -20,6 +21,7 @@ export class PaymentPage {
   hideButton: boolean = false;
   avatarUrl: string;
   constructor(
+    public events: Events,
     private geolocation: Geolocation,
     public navCtrl: NavController,
     public navParams: NavParams,
@@ -41,11 +43,15 @@ export class PaymentPage {
   }
 
   // getLocation() {
-  //   let watch = this.geolocation.watchPosition();
-  //   watch.subscribe(data => {
-  //     let la = data.coords.latitude;
-  //     let lo = data.coords.longitude;
-  //     console.log("la: " + la + ", lo: " + lo);
-  //   });
+  //   this.geolocation
+  //     .getCurrentPosition()
+  //     .then(data => {
+  //       let long = data.coords.longitude;
+  //       let lati = data.coords.latitude;
+  //       console.log(long + ", la: " + lati);
+  //     })
+  //     .catch(err => {
+  //       console.log("Error", err);
+  //     });
   // }
 }

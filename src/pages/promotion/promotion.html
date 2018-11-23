@@ -11,13 +11,10 @@
 <ion-content class="card-background-page">
   <ion-list no-lines>
     <ion-card *ngFor="let shopInfo of shopInfos">
-      <button ion-button clear>
-        <!-- <img src="{{////////////////////////////// image source}}" /> -->
-      </button>
-      <!--
-        <div class="card-title" #title>{{ shopInfo.shop }}</div>
-        <div class="card-subtitle">{{shopInfo.type}}</div>
-      -->
+      <img src="{{ shopInfo.shop }}" />
+
+      <div class="card-title" #title>{{ shopInfo.info }}</div>
+      <!-- <div class="card-subtitle">{{shopInfo.type}}</div> -->
     </ion-card>
   </ion-list>
 </ion-content>
