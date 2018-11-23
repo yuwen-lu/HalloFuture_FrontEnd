@@ -1,38 +1,26 @@
 <ion-header>
-  <ion-navbar color="dark">
-    <ion-title>
-		Hallo Future
-    </ion-title>
-  </ion-navbar>
+  <ion-navbar color="dark"> <ion-title> Hallo Future </ion-title> </ion-navbar>
 </ion-header>
 
 <ion-content padding>
+  <br />
+  <h4>Welcome to the future.</h4>
+  <br /><br />
+  <div id="top-buttons">
+    <button ion-button color="dark" (click)="toLogin()">Login</button>
+    <!-- <strong>or</strong> -->
+    <button ion-button color="dark" (click)="toSignUp()">Sign Up</button>
+  </div>
 
-
-<br>
-<h4>Welcome to the future.</h4>
-<br><br>
-	<div id="top-buttons">
-		<button ion-button color="dark" (click)="toLogin()">
-		  Login
-		</button>
-		<!-- <strong>or</strong> -->
-		<button ion-button color="dark" (click)="toSignUp()">
-		  Sign Up
-		</button>
-	</div>
-
-	<div id="touch-id">
-		<button ion-button color="dark" (click)="fingerPrintAuth()">
-			Touch ID
-		</button>
-	</div>
-
-
+  <div id="touch-id">
+    <button ion-button color="dark" (click)="toAbout()">About</button>
+  </div>
 </ion-content>
 
 <ion-footer>
   <ion-toolbar>
-    <p class="footer">Copyrights &copy; 2018, HalloFuture Inc. All rights reserved.</p>
+    <p class="footer">
+      Copyrights &copy; 2018, HalloFuture, All rights reserved.
+    </p>
   </ion-toolbar>
 </ion-footer>

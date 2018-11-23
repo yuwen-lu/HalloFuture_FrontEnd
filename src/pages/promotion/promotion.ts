@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Component } from "@angular/core";
+import { IonicPage, NavController, NavParams } from "ionic-angular";
+import { HttpClient } from "@angular/common/http";
 
 /**
  * Generated class for the PromotionPage page.
@@ -10,16 +11,31 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-promotion',
-  templateUrl: 'promotion.html',
+  selector: "page-promotion",
+  templateUrl: "promotion.html"
 })
 export class PromotionPage {
+  cardInfos;
+  uname;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(
+    public http: HttpClient,
+    public navCtrl: NavController,
+    public navParams: NavParams
+  ) {
+    this.uname = this.navParams.get("uname");
+    console.log("value: " + this.uname);
+    console.log(typeof this.uname);
+
+    let url = "http://localhost:8080/shop?account=" + this.uname;
+    console.log("url: " + url);
+    this.http.get(url).subscribe(data => {
+      console.log(data);
+      this.cardInfos = data;
+    });
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad PromotionPage');
+    console.log("ionViewDidLoad PromotionPage");
   }
-
 }

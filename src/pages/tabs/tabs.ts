@@ -1,8 +1,8 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { CardPackagePage } from '../card-package/card-package';
-import { PaymentPage } from '../payment/payment';
-import { PromotionPage } from '../promotion/promotion';
+import { Component } from "@angular/core";
+import { IonicPage, NavController, NavParams } from "ionic-angular";
+import { CardPackagePage } from "../card-package/card-package";
+import { PaymentPage } from "../payment/payment";
+import { PromotionPage } from "../promotion/promotion";
 /**
  * Generated class for the TabsPage page.
  *
@@ -12,24 +12,21 @@ import { PromotionPage } from '../promotion/promotion';
 
 @IonicPage()
 @Component({
-  selector: 'page-tabs',
-  templateUrl: 'tabs.html',
+  selector: "page-tabs",
+  templateUrl: "tabs.html"
 })
 export class TabsPage {
-
-	uname: string;
-	tab1Root = CardPackagePage;
- 	tab2Root = PaymentPage;
- 	tab3Root = PromotionPage;
+  uname;
+  tab1Root = CardPackagePage;
+  tab2Root = PaymentPage;
+  tab3Root = PromotionPage;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-
-  	this.uname = navParams.get('username');
-    console.log(this.uname);
+    this.uname = this.navParams;
+    console.log("type tabs uname: " + typeof this.uname);
+    console.log("tabs uname: " + this.uname);
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad TabsPage');
+    console.log("ionViewDidLoad TabsPage");
   }
-
 }
-

@@ -1,5 +1,20 @@
-<ion-tabs selectedIndex = "1">
-  <ion-tab [root]="tab1Root" tabTitle="Cards" tabIcon="card"></ion-tab>
-  <ion-tab [root]="tab2Root" tabTitle="Payment" tabIcon="cash"></ion-tab>
-  <ion-tab [root]="tab3Root" tabTitle="Promotion" tabIcon="albums"></ion-tab>
+<ion-tabs selectedIndex="1">
+  <ion-tab
+    [root]="tab1Root"
+    tabTitle="Cards"
+    [rootParams]="uname"
+    tabIcon="card"
+  ></ion-tab>
+  <ion-tab
+    [root]="tab2Root"
+    tabTitle="Payment"
+    [rootParams]="uname"
+    tabIcon="cash"
+  ></ion-tab>
+  <ion-tab
+    [root]="tab3Root"
+    tabTitle="Promotion"
+    [rootParams]="uname"
+    tabIcon="albums"
+  ></ion-tab>
 </ion-tabs>

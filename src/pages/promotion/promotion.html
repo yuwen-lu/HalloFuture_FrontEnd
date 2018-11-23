@@ -5,100 +5,15 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-
-  <ion-navbar color="dark">
-    <ion-title>Promotion</ion-title>
-  </ion-navbar>
-
+  <ion-navbar color="dark"> <ion-title>Promotion</ion-title> </ion-navbar>
 </ion-header>
 
-
 <ion-content class="card-background-page">
-
-  <ion-card>
-    <img src="../../assets/imgs/promotion/starbucks.jpg"/>
- 	<div class="store-name">Starbucks</div>
-    <div class="prom-date">Apr 15 - June 17</div>
-
-	<ion-card-content>
-		<p>Free Burgers on Sundays!</p>
-  		<p>Free Burgers on Sundays!</p>
-  		<p>Free Burgers on Sundays!</p>
-
-  		<div id="more-button">
-  			<button ion-button icon-end clear>
-				More
-				<ion-icon name="arrow-forward"></ion-icon>
-	  		</button>
-  		</div>
-
-	</ion-card-content>
-    
-  </ion-card>
-
-  <ion-card>
-    <img src="../../assets/imgs/promotion/burger-king.jpg"/>
- 	<div class="store-name">Burger King</div>
-	<div class="prom-date">Mar 1 - Mar 15</div>
-
-    <ion-card-content>
-  		<p>Free Burgers on Sundays!</p>
-  		<p>Free Burgers on Sundays!</p>
-  		<p>Free Burgers on Sundays!</p>
-
-
-  		<div id="more-button">
-  			<button ion-button icon-end clear>
-				More
-				<ion-icon name="arrow-forward"></ion-icon>
-	  		</button>
-  		</div>
-
-
-  	</ion-card-content>
-  </ion-card>
-
-  <ion-card>
-    <img src="../../assets/imgs/promotion/mcdonalds.jpg"/>
-
-    <div class="store-name">McDonald's</div>
-    <div class="prom-date">July 4 - Sep 1</div>
-
-	<ion-card-content>
-  		<p>Free Burgers on Sundays!</p>
-  		<p>Free Burgers on Sundays!</p>
-  		<p>Free Burgers on Sundays!</p>
-
-  		<div id="more-button">
-  			<button ion-button icon-end clear>
-				More
-				<ion-icon name="arrow-forward"></ion-icon>
-	  		</button>
-  		</div>
-
-  	</ion-card-content>
-  </ion-card>
-
-  <ion-card>
-    <img src="../../assets/imgs/promotion/kfc.jpg"/>
-    
-    <div class="store-name">KFC</div>
-    <div class="prom-date">TODAY</div>
-
-	<ion-card-content>
-  		<p>Free Burgers on Sundays!</p>
-  		<p>Free Burgers on Sundays!</p>
-  		<p>Free Burgers on Sundays!</p>
-
-  		<div id="more-button">
-  			<button ion-button icon-end clear>
-				More
-				<ion-icon name="arrow-forward"></ion-icon>
-	  		</button>
-  		</div>
-
-  	</ion-card-content>
-
-  </ion-card>
-
+  <ion-list no-lines>
+    <ion-card *ngFor="let cardInfo of cardInfos">
+      <button ion-button clear><img src="{{cardInfo.type}}" /></button>
+      <div class="card-title" #title>{{ cardInfo.card }}</div>
+      <!-- <div class="card-subtitle">{{cardInfo.type}}</div> -->
+    </ion-card>
+  </ion-list>
 </ion-content>

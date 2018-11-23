@@ -1,41 +1,32 @@
-<!-- <ion-header>
-  <ion-navbar color="primary">
-    <ion-title style="text-align: center">
-		Welcome to the future.
-    </ion-title>
-  </ion-navbar>
-</ion-header>
- -->
+<!--
+  <ion-header>
+    <ion-navbar color="primary">
+      <ion-title style="text-align: center">
+  		Welcome to the future.
+      </ion-title>
+    </ion-navbar>
+  </ion-header>
+-->
 <ion-content padding>
+  <!-- Beginning of the form section -->
 
+  <strong>Login to our next-generation card manager:</strong>
+  <ion-list>
+    <ion-item>
+      <ion-label floating>Username</ion-label>
+      <ion-input type="text" #username></ion-input>
+    </ion-item>
 
+    <ion-item>
+      <ion-label floating>Password</ion-label>
+      <ion-input type="password" #password></ion-input>
+    </ion-item>
+  </ion-list>
 
+  <!-- end of login form -->
 
-<!--Beginning of the form section -->
-
-
-
-<strong>Login to our next-generation card manager:</strong>
-	<ion-list>
-
-  <ion-item>
-    <ion-label floating>Username</ion-label>
-    <ion-input type="text" #username></ion-input>
-  </ion-item>
-
-  <ion-item>
-    <ion-label floating>Password</ion-label>
-    <ion-input type="password" #password></ion-input>
-  </ion-item>
-
-	</ion-list>
-
-<!-- end of login form -->
-
-
-
-	<button ion-button full color="dark" (click)="login()">
-	  Login
-	</button>
-	<button ion-button color="dark" clear full (click)="getBack()">Get Back</button>
+  <button ion-button full color="dark" (click)="login()">Login</button>
+  <button ion-button color="dark" clear full (click)="getBack()">
+    Get Back
+  </button>
 </ion-content>
