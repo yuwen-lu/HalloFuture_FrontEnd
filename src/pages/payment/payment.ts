@@ -2,7 +2,7 @@ import { Component } from "@angular/core";
 import { IonicPage, NavController, NavParams, Events } from "ionic-angular";
 import { HttpClient } from "@angular/common/http";
 import { AlertController } from "ionic-angular";
-
+import { QRCodeModule } from "angular2-qrcode";
 // import { Observable } from 'rxjs/Observable';
 
 /**
@@ -23,6 +23,7 @@ export class PaymentPage {
   avatarUrl: string;
   latitude: string;
   longitude: string;
+  card: any;
   constructor(
     public alertCtrl: AlertController,
     public events: Events,
@@ -67,10 +68,18 @@ export class PaymentPage {
           this.longitude
       )
       .subscribe(data => {
-        /////////////////////////////////////////////
-        let card = data.cardNum; ////////////////////////
-        /////////////////////////////////////////////
-        console.log("received card number: " + card);
+        let result = data.returnCode; //0 success, 1 error
+        if (result == 0) {
+          this.card = data.card;
+          console.log("received card number: " + this.card);
+        } else {
+          const alert = this.alertCtrl.create({
+            title: "You're not the same person!!!",
+            subTitle: ": (",
+            buttons: ["OH NO!"]
+          });
+          alert.present();
+        }
       });
   }
 

@@ -3,8 +3,7 @@ import { ErrorHandler, NgModule } from "@angular/core";
 import { IonicApp, IonicErrorHandler, IonicModule } from "ionic-angular";
 import { SplashScreen } from "@ionic-native/splash-screen";
 import { StatusBar } from "@ionic-native/status-bar";
-import { TouchID } from "@ionic-native/touch-id";
-
+import { QRCodeModule } from "angular2-qrcode";
 import { MyApp } from "./app.component";
 import { HomePage } from "../pages/home/home";
 import { AboutPage } from "../pages/about/about";
@@ -31,7 +30,12 @@ import { Geolocation } from "@ionic-native/geolocation";
     PaymentPage,
     PromotionPage
   ],
-  imports: [BrowserModule, HttpClientModule, IonicModule.forRoot(MyApp)],
+  imports: [
+    BrowserModule,
+    HttpClientModule,
+    IonicModule.forRoot(MyApp),
+    QRCodeModule
+  ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
@@ -49,7 +53,6 @@ import { Geolocation } from "@ionic-native/geolocation";
     Geolocation,
     StatusBar,
     SplashScreen,
-    TouchID,
     { provide: ErrorHandler, useClass: IonicErrorHandler }
   ]
 })

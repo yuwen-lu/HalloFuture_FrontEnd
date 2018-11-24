@@ -17,5 +17,7 @@
     </ion-fab>
   </div>
 
-  <div id="qrcode"><img src="{{avatarUrl}}" /></div>
+  <div id="qrcode" *ngIf="hideButton">
+    <qr-code size="250" [value]="card"></qr-code>
+  </div>
 </ion-content>
