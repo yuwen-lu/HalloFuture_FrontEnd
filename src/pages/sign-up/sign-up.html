@@ -4,42 +4,41 @@
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
 -->
-<!-- <ion-header>
+<!--
+  <ion-header>
 
-  <ion-navbar>
-    <ion-title>SignUp</ion-title>
-  </ion-navbar>
+    <ion-navbar>
+      <ion-title>SignUp</ion-title>
+    </ion-navbar>
 
-</ion-header> -->
-
+  </ion-header>
+-->
 
 <ion-content padding>
+  <!-- Beginning of the form section -->
 
+  <strong>Sign up and embrace the future:</strong>
+  <ion-list>
+    <ion-item>
+      <ion-label floating>Username</ion-label>
+      <ion-input type="text" #username></ion-input>
+    </ion-item>
 
+    <ion-item>
+      <ion-label floating>Alias</ion-label>
+      <ion-input type="text" #accname></ion-input>
+    </ion-item>
 
-<!--Beginning of the form section -->
+    <ion-item>
+      <ion-label floating>Password</ion-label>
+      <ion-input type="password" #password></ion-input>
+    </ion-item>
+  </ion-list>
 
-<strong>Sign up and embrace the future:</strong>
-	<ion-list>
+  <!-- end of sign up form -->
 
-  <ion-item>
-    <ion-label floating>Username</ion-label>
-    <ion-input type="text" #username></ion-input>
-  </ion-item>
-
-  <ion-item>
-    <ion-label floating>Password</ion-label>
-    <ion-input type="password" #password></ion-input>
-  </ion-item>
-
-	</ion-list>
-
-<!-- end of sign up form -->
-
-
-	<button ion-button full color="dark" (click)="signUp()">
-	  Sign Me Up!
-	</button>
-	<button ion-button color="dark" clear full (click)="getBack()">Get Back</button>
-
+  <button ion-button full color="dark" (click)="signUp()">Sign Me Up!</button>
+  <button ion-button color="dark" clear full (click)="getBack()">
+    Get Back
+  </button>
 </ion-content>

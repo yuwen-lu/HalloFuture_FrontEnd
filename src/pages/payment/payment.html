@@ -9,12 +9,6 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-fab bottom right id="getLocation">
-    <button id="getLocation" ion-fab mini color="light" (click)="getLocation()">
-      LOCATION
-    </button>
-  </ion-fab>
-
   <div *ngIf="!hideButton">
     <ion-fab center middle>
       <button ion-fab color="dark" id="pay-button" (click)="getStringCode()">
